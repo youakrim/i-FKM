@@ -5,7 +5,7 @@
 Open terminal and paste the following lines to download the app and install the requirements:
 
 ```bash
-git clone https://github.com/i-FKM
+git clone https://github.com/youakrim/i-FKM
 cd i-FKM
 pip install -r requirements.txt
 ```
