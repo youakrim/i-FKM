@@ -5,7 +5,8 @@ from numba import jit
 import numba
 from numba.typed import List
 from decimal import Decimal
-
+import random
+import copy
 
 
 @jit(nopython=True)
@@ -57,7 +58,7 @@ def fuzzy_k_means(epsilon, X, nb_clusters, m=1):
                 sum_u_ij += U[i, j]**m
 
             C[j] = sum_u_ij_x_i / sum_u_ij
-            #print(C[j])
+
 
         # Update U
         for i in range(0, X.shape[0]):
@@ -71,9 +72,6 @@ def fuzzy_k_means(epsilon, X, nb_clusters, m=1):
                     try:
                         sum_divisor+= (x_i_c_j / x_i_c_k)**round(2/(m-1))
                     except:
-                        print('x_i_c_j', x_i_c_j)
-                        print('x_i_c_k', x_i_c_k)
-                        print('(2/(m-1))', (2/(m-1)))
                         raise Exception
 
                 U[i, j] = 1 / sum_divisor
@@ -83,8 +81,7 @@ def fuzzy_k_means(epsilon, X, nb_clusters, m=1):
             break
     return U
 
-import random
-import copy
+
 
 def fuzzy_k_means_lists(epsilon, X, nb_clusters, m=1):
     # Declare U
@@ -136,5 +133,3 @@ def fuzzy_k_means_lists(epsilon, X, nb_clusters, m=1):
         if (diff_stop_lists(np.array(old_U), np.array(U)) < epsilon):
             break
     return U
-
-#fuzzy_k_means_lists(0.5, np.array([1,5,6,7,8,7, 5,3,12,16,0,12, 4]), 2, m=1.5)
