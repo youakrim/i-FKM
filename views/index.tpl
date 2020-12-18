@@ -11,8 +11,8 @@
         <option value="fuzzy_k_means">Fuzzy k means</option>
         <option value="k_means">K-means</option>
       </select>
-      <label>Nombre de clusters <input id="nb_clusters" type="range" min='2' max='10' step="1" onchange="updateTextInput(this.value);" /> <span id="textInput">2</span></label>
-      <label>Valeur de m<input id="m" type="range" value='1.1' min='1.5' max='2' step="0.1" onchange="updateMInput(this.value);"/><span id="mInput">1.5</span></label>
+      <label>Nombre de clusters <input id="nb_clusters" type="range" min='2' value='2' max='10' step="1" onchange="updateTextInput(this.value);" /> <span id="textInput">2</span></label>
+      <label>Valeur de m<input id="m" type="range" value='1.5' min='1.5' max='2' step="0.1" onchange="updateMInput(this.value);"/><span id="mInput">1.5</span></label>
       <label>Epsilon<input id="e" type="range" value='0.5' min='0' max='1' step="0.1" onchange="updateEInput(this.value);"/><span id="eInput">0.5</span></label>
       <label>Alpha coupe <input type="checkbox" id="alpha_cut"/>  </label>
       <label>Alpha<input id="a" type="range" value='0.5' min='0' max='1' step="0.1" onchange="updateAInput(this.value);"/><span id="aInput">0.5</span></label>
