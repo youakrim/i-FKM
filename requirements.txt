@@ -1,5 +1,5 @@
 bottle
 numba
-base64
+pybase64
 seaborn
 opencv-python
